@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IP List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename="homepage.css") }}"/>
+    <!--
+    <style>
+      table {
+      border-collapse: collapse;
+      width: 100%;
+      text-align: center;
+      }
+
+      th, td {
+      padding: 8px;
+      border: 1px solid black;
+      }
+
+    th {
+      background-color: #ddd;
+      font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    </style>
+    -->
+  </head>
+  <body>
+<table id="demo">
+    <!-- HEADER ROW -->
+    <tr>
+      <th>#</th>
+      <th>Malicius IP Atack</th>
+     
+    </tr>
+   
+    <!-- DATA ROWS -->
+    {% for row in listIpMalicius %}
+    <tr>
+     
+      <td>{{  loop.index }}</td>
+      <td>{{ row }}</td>
+      
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!-- form.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Input Form</title>
+  </head>
+  <body>
+    <form method="POST" action="{{ url_for('predict') }}">
+      <input type="text" name="input1" placeholder="Input 1" required><br>
+      <input type="text" name="input2" placeholder="Input 2" required><br>
+      <input type="submit" value="Predict">
+    </form>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+- name: Configurar firewall de Windows para bloquear tráfico desde la dirección IP especificada
+  hosts: windows
+  vars:
+    ip_address: "{{ ip_address }}"
+  tasks:
+    - win_firewall_rule:
+        name: "Bloqueo de {{ ip_address }}"
+        direction: in
+        action: block
+        protocol: any
+        remote_ip: "{{ ip_address }}"

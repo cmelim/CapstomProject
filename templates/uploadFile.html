@@ -1,0 +1,97 @@
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<! - - - Include the above in your HEAD tag - - - - →
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+<div class="container">
+<style>
+/* Style the body */
+body {
+ font-family: Arial;
+ margin: 0;
+}
+/* Header/Logo Title */
+.header {
+ padding: 60px;
+ text-align: center;
+ background: orange;
+ color: white;
+ font-size: 30px;
+}
+/* Page Content */
+.content {padding:20px;}
+</style>
+</head>
+<body>
+<div class="header">
+ <h1>Intruction Detection</h1>
+ <p style="font-family: cursive;">Using MAchine Learning</p>
+</div>
+<br/>
+<style>
+input[type=text], select {
+ width: 100%;
+ padding: 12px 20px;
+ margin: 8px 0;
+ display: inline-block;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ box-sizing: border-box;
+}
+input[type=submit] {
+ width: 30%;
+ justify-content: center;
+ background-color: orange;
+ color: white;
+ padding: 10px 20px;
+ margin: 8px 0;
+ border: none;
+ border-radius: 15px 0 15px 0;
+ cursor: pointer;
+}
+input[type=submit]:hover {
+ background-color: #45a049;
+ 
+}
+div {
+ border-radius: 5px;
+ background-color: lightgrey;
+ padding: 20px;
+}
+</style>
+<div>
+ <form method="POST" action="" enctype="multipart/form-data">
+ 
+ <label for="fname" style="font-family: cursive;">Select Algotitm</label>
+ 
+	
+ <br><br> 
+<select id="algoritmo" name="selecctalgoritm">
+        <option value="0" >KNN</option>
+        <option value="1">AB rained</option>
+        <option value="2">Decision Tree</option>
+        <option value="3">GB_trained</option>
+        <option value="4">LG_trained</option>
+        <!--
+        <option value="5">NB_trained_</option>
+        -->
+        <option value="6">LGBM_trained Model</option>
+        <option value="7">RF_trained_</option>
+        <option value="8">SVM_trained_</option>
+      </select>
+<br><br>
+<p><input type="file" name="file" ></p>
+ <div style="text-align:center;">
+ <input type="submit" value="Detect Malicious Intrusion">
+ </div>
+ </form>
+</div>
+</body>
+<! - - - -let's go and get that son of a b**** - - ->
+<div>
+ <span style="color:red; font-family: cursive;font-size: 20px"><i>{{prediction}}</i></span>
+</div>
+</html>

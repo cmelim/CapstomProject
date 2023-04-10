@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+new gridjs.Grid({
+  columns: [
+    { id: 'name', name: 'Name' },
+    { id: 'age', name: 'Age' },
+    { id: 'address', name: 'Address' },
+    { id: 'phone', name: 'Phone Number' },
+    { id: 'email', name: 'Email' },
+  ],
+  data: [
+    {% for row in listIpMalicius  %}
+      {
+        Id: '{{ loop.index }}',
+        IP: '{{ row}}'
+      },
+    {% endfor %}
+  ],
+  search: true,
+  sort: true,
+  pagination: true,
+}).render(document.getElementById('data'));
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row"> Prediction Model   <strong >{{ predictionModelName }}</strong> </div>
+        <div class="row"> Total rows parsed   <strong >{{ totalRows }}</strong> </div>
+        <div class="row"> Total Malicius Detection   <strong class="background-color:red" >{{ totalMalicuisRows }}</strong> </div>
+    </div>
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>IP Source Adress</th>
+        <th>IP Dest Adress</th>
+        <th>Protocol</th>
+        <th>Pkt Len Min</th>
+        <th>Bwd Pkt Len Std</th>
+        <th>Pkt Len Std</th>
+        <th>Bwd Seg Size Avg  </th>
+        <th>Bwd Pkt Len Mean</th>   
+        <th> Bwd Pkt Len Max</th>
+        <th>Pkt Len Max</th>  
+        <th>Bwd Pkt Len Min</th>  
+        <th>Pkt Len Mean</th>  
+        <th>Pkt Len Var</th>  
+        <th>Pkt Size Avg</th>  
+        <th>Fwd IAT Std</th>  
+      
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in listIpMalicius %}
+        <tr> 
+          <td>{{  loop.index }}</td>
+          <td>{{ row[0] }}</td>
+          <td>{{ row[1] }}</td>
+          <td>{{ row[3] }}</td>
+          <td>{{ row[4] }}</td>
+          <td>{{ row[5] }}</td>
+          <td>{{ row[6] }}</td>
+          <td>{{ row[7] }}</td>
+          <td>{{ row[8] }}</td>
+          <td>{{ row[9] }}</td>
+          <td>{{ row[10] }}</td>
+          <td>{{ row[11] }}</td>
+          <td>{{ row[12] }}</td>
+          <td>{{ row[13] }}</td>
+          <td>{{ row[14] }}</td>
+          
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
